@@ -137,3 +137,14 @@ const showMessage = (message) => {
     messageDisplay.removeChild(messageElement);
   }, 2000);
 };
+
+const flipTiles = () => {
+  const rowTiles = document.querySelector("guessRow-" + currentRow).childNodes;
+  rowTiles.forEach((tile, index) => {
+    const dataLetter = tile.getAttribute("data");
+
+    if (dataLetter == wordle[index]) {
+      tile.classList.add("green-overlay");
+    }
+  });
+};
